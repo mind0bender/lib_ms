@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
-import { blue, indigo } from "tailwindcss/colors";
 
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        primary: indigo,
-        secondary: blue,
+        primary: "#C5BAFF",
+        secondary: "#C4D9FF",
+        tertiary: "#E8F9FF",
       },
     },
   },

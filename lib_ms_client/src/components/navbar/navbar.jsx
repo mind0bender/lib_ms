@@ -1,41 +1,22 @@
-import { Link, NavLink } from "react-router-dom";
-import Logo from "../../assets/cu.png";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav>
-      <ul className="flex justify-between items-center bg-primary-700 text-white py-4 px-6">
-        <li>
-          <Link
-            to={`/`}
-            className="text-2xl font-bold flex justify-center items-center gap-4">
-            <img src={Logo} alt="logo" className="h-12" />
-            CU Library
-          </Link>
+    <nav className={`flex justify-between bg-primary text-gray-800 py-4 px-8`}>
+      <div className={`text-2xl font-bold text-black`}>Library MS</div>
+      <ul className={`flex justify-between items-center gap-4`}>
+        <li className={`hover:text-black`}>
+          <NavLink to="/">Home</NavLink>
         </li>
-        <ul className="flex space-x-4">
-          <li>
-            <NavLink
-              className={({ isActive }) => `${isActive && "underline"}`}
-              to={`/`}>
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={({ isActive }) => `${isActive && "underline"}`}
-              to={`/about`}>
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              className={({ isActive }) => `${isActive && "underline"}`}
-              to={`/contact`}>
-              Contact
-            </NavLink>
-          </li>
-        </ul>
+        <li className={`hover:text-black`}>
+          <NavLink to="/books">Books</NavLink>
+        </li>
+        <li className={`hover:text-black`}>
+          <NavLink to="/login">Login</NavLink>
+        </li>
+        <li className={`hover:text-black`}>
+          <NavLink to="/Register">Register</NavLink>
+        </li>
       </ul>
     </nav>
   );

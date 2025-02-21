@@ -1,54 +1,44 @@
+import { Search } from "lucide-react";
 import Footer from "../../components/footer/footer";
 import Navbar from "../../components/navbar/navbar";
-import ServiceCard from "../../components/serviceCard/servicecard";
-import { BookOpen, IdCard, Library, LogIn } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main className={`grow`}>
+      <main className={`flex flex-col grow`}>
         <div
-          className={`flex flex-col text-center items-center justify-center gap-4 px-8 py-20 bg-gradient-to-r from-purple-300 to-secondary-300`}>
-          <div className={`text-3xl sm:text-4xl font-bold`}>
-            Welcome to Chandigarh University Library
+          className={`w-full text-center bg-primary border-b border-purple-400`}>
+          <h1 className={`text-4xl font-bold text-black px-10 py-20`}>
+            Welcome to Library Management System
+          </h1>
+        </div>
+        <div className={`grow bg-tertiary`}>
+          <div
+            className={`p-8 m-8 rounded-full bg-secondary flex justify-around items-center shadow-lg`}>
+            <div className={`w-1/2 flex`}>
+              <input
+                className={`px-4 py-3 grow rounded-l-full outline-none border border-r-0 border-purple-400`}
+                type="text"
+                placeholder={"Search for books..."}
+              />
+              <button
+                className={`px-4 py-3 rounded-r-full bg-primary text-white hover:bg-purple-900 border border-l-0 border-purple-400`}>
+                <Search size={24} />
+              </button>
+            </div>
+            <Link to={`checkinout`}>
+              <button
+                className={`px-4 py-3 bg-primary rounded-md hover:text-white hover:bg-purple-900 duration-100 border border-purple-400`}>
+                In/Out
+              </button>
+            </Link>
           </div>
-          <div className={`text-lg`}>
-            Your gateway to knowledge and resources
-          </div>
-          <input
-            placeholder={`Search Catalog`}
-            type="text"
-            className={`bg-white border border-slate-400 py-2 px-6 rounded-full outline-none sm:w-1/2 max-w-lg`}
-          />
         </div>
         <div>
-          <div className={`text-3xl font-bold text-center py-8`}>
-            Our Services
-          </div>
-          <div
-            className={`flex justify-center items-center flex-wrap px-8 md:px-16 pb-8 gap-8`}>
-            <ServiceCard
-              icon={<LogIn />}
-              title={`Check-in/out`}
-              description={`Streamlined process for entering and exiting the library`}
-            />
-            <ServiceCard
-              icon={<BookOpen />}
-              title={`Browse Books`}
-              description={`Explore our vast collection of physical and digital books`}
-            />
-            <ServiceCard
-              icon={<Library />}
-              title={`Issue & Return`}
-              description={`Easily borrow and return books with our efficient system`}
-            />
-            <ServiceCard
-              icon={<IdCard />}
-              title={`Membership Management`}
-              description={`Explore our vast collection of physical and digital books`}
-            />
-          </div>
+          <div className={`text-lg font-bold`}>Popular Books</div>
+          <div></div>
         </div>
       </main>
       <Footer />

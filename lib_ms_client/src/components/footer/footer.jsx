@@ -3,46 +3,41 @@ import { Link } from "react-router-dom";
 export default function Footer() {
   return (
     <footer
-      className={`bg-indigo-700 text-white px-8 py-10 flex justify-between sm:flex-row flex-col gap-3`}>
-      <div>
-        <h3 className={`font-bold text-lg`}>Contact Us</h3>
-        <ul>
-          <li>
-            Email:&nbsp;
-            <Link to={`mailto:library@cuchd.in`}>library@cuchd.in</Link>
-          </li>
-          <li>
-            Phone:&nbsp;
-            <Link to={`tel:+91-1234567890`}>+91-1234567890</Link>
-          </li>
-        </ul>
+      className={`bg-primary text-black px-8 py-10 flex flex-col gap-3 justify-center items-center border-t border-purple-400`}>
+      <div className={`flex gap-4 justify-around w-full max-w-6xl`}>
+        <div className={`flex flex-col gap-5 w-1/3`}>
+          <h1 className={`text-lg font-bold`}>Library Management System</h1>
+          <div className={`text-sm`}>
+            Your one-stop solution for managing library resources efficiently.
+          </div>
+        </div>
+        <div className={`flex flex-col gap-5`}>
+          <h1 className={`text-lg font-bold`}>Library Management System</h1>
+          <ul className={`text-sm flex flex-col gap-2`}>
+            <li>
+              <Link to={`/about`}>About Us</Link>
+            </li>
+            <li>
+              <Link to={`/contact`}>Contact</Link>
+            </li>
+          </ul>
+        </div>
+        <div className={`flex flex-col gap-5`}>
+          <h1 className={`text-lg font-bold`}>Contact Info</h1>
+          <ul className={`text-sm flex flex-col gap-2`}>
+            <li>
+              Email:{" "}
+              <Link to={`mailto:library@cuchd.in`}>library@cuchd.in</Link>
+            </li>
+            <li>
+              Phone: <Link to={`tel:1234567890`}>1234567890</Link>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h3 className={`font-bold text-lg`}>Quick Links</h3>
-        <ul>
-          <li>
-            <Link to={`/faqs`}>FAQs</Link>
-          </li>
-          <li>
-            <Link to={`/rules`}>Library Rules</Link>
-          </li>
-          <li>
-            <Link to={`/e-resources`}>E-Resources</Link>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <h3 className={`font-bold text-lg`}>Follow Us</h3>
-        <ul>
-          <li>
-            <Link to={`https://www.facebook.com/chandigarhuniversitygharuan/`}>
-              Facebook
-            </Link>
-          </li>
-          <li>
-            <Link to={`https://x.com/Chandigarh_uni/?mx=2`}>Twitter</Link>
-          </li>
-        </ul>
+      <hr className={`w-10/12 my-4 border-t border-stone-700`} />
+      <div className={`text-sm`}>
+        © 2025 Library Management System. All rights reserved.
       </div>
     </footer>
   );
